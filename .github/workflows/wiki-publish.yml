@@ -1,0 +1,19 @@
+name: Publish Wiki Pages
+on:
+  push:
+    branches: [main]
+concurrency:
+  group: publish-wiki
+  cancel-in-progress: true
+permissions:
+  contents: write
+jobs:
+  publish-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.4
+      - uses: nglehuy/github-wiki-action@master
+        with:
+          token: ${{ secrets.TOKEN }}
+          path: docs
+          preprocess: true
