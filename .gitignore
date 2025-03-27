@@ -1,0 +1,17 @@
+build
+dist
+*.egg-info
+tensorflow
+externals
+.vim
+.session.vim
+Session.vim
+.idea
+__pycache__
+.pytest*
+venv*
+.venv*
+my_train
+.DS_Store
+models/*
+!models/README.md
